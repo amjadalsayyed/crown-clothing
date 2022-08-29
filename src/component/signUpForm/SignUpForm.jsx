@@ -1,4 +1,3 @@
-import { async } from "@firebase/util";
 import { useState } from "react";
 import Button from "../button/Button";
 import {
@@ -39,6 +38,7 @@ const SignUpForm = () => {
         password
       );
       await createUserDocumentFromAuth(user, { displayName });
+
       restFormFields();
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
